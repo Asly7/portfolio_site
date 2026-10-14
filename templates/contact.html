@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Contact | Keza Asly Ella{% endblock %}{# sets the Contact tab title #}
+{% block content %}
+<section class="mx-auto my-8 max-w-xl px-6">
+
+    <form method="post" class="my-5 rounded-3xl bg-white p-3 shadow-sm"> <!----it sends the comment to django-->
+        {% csrf_token %}{# for protecting the page to be accessed by hackers#}
+
+        <h2 class="mb-4 text-xl font-bold">Leave a message </h2>
+        {% if error %}{# a flag is raised causes an interrupt this row shouldnt be left empty#}
+            <p class="mb-3 text-green-800">{{error}}</p>
+        {% endif %}
+        <label class="mb-1 block" for="name">Your name</label>
+        <input class="mb-4 w-full rounded-lg border border-green-200 p-3 focus:border-green-800 focus:outline-none" required>
+        <label class="mb-1 block" for="comment">Leave me a comment</label>
+        <textarea class="w-full rounded-lg border border-green-200 p-2 focus:border-green-800 focus:outline-none" required></textarea>
+        <button class="mt-4 rounded-full bg-green-900 px-5 py-3 text-white transition duration-300 hover:bg-green-800" type="submit">Send my note</button>
+        {% if comment %}{# we display a thank-you text after the  submission is valid #}
+            <p class="mt-4 rounded-xl bg-green-100 p-4">Thank you,{{name}} Your note => “{{comment}}”</p>
+        {% endif %}
+    </form>
+
+    <div class="rounded-3xl bg-white p-3 shadow-sm">
+        <a class="text-green-700 underline transition duration-300 hover:text-black" href="#">kezaasly@gmail.com</a>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}{# makes sure the header and footer are here #}
+{% load static %}{# enables Django's static image path tag #}
+{% block title %}Home | Keza Asly Ella{% endblock %}{# browser tab title #}
+{% block content %}
+<section class="mx-auto flex max-w-5xl flex-col items-center gap-8 p-6 md:flex-row">
+    <div class="rounded-3xl bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <p class="font-semibold text-black "> Greeting to you all !</p>
+        <h1 class="my-3 text-4xl font-bold">I’m Keza Asly Ella</h1>
+        <p class="mb-6">I’m a student, a genuine friend, and someone who loves meeting people and sharing a good conversation.</p>
+        <a class="inline-block rounded-full bg-green-900 px-5 py-3 text-white transition duration-300 hover:bg-green-800" href="{% url 'about' %}">Get to know me</a>
+    </div>
+    <img src="{% static 'asly.png' %}" alt="Keza Asly Ella smiling" class="mx-auto h-72 w-72 rounded-3xl border-4 border-green-300 object-cover shadow-md transition duration-300 hover:scale-105"> <!-- loads the photo and gently enlarges it on hover -->
+</section>
+
+<section class="mx-auto max-w-5xl px-6 pb-10">
+    <h2 class="mb-4 text-2xl font-bold">A few things on my mind</h2>
+    <div class="flex flex-wrap gap-4"> <!-- flex keeps a clear gap and wraps cards on small screens -->
+        <div class="min-w-64 flex-1 rounded bg-green-900 p-2 text-white transition duration-300 hover:-translate-y-1">
+            <h3 class="font-bold">Mathematics</h3>
+            <p>I enjoy numbers, calculations, and finding answers.</p>
+        </div>
+        <div class="min-w-64 flex-1 rounded bg-green-900 p-2 text-white transition duration-300 hover:-translate-y-1">
+            <h3 class="font-bold">Computer Science</h3>
+            <p>It challenges me and helps me build critical thinking skills.</p>
+        </div>
+        <div class="min-w-64 flex-1 rounded bg-green-900 p-2 text-white transition duration-300 hover:-translate-y-1">
+            <h3 class="font-bold">Business</h3>
+            <p>It encourages me to make thoughtful and ethical choices.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

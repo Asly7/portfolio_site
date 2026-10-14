@@ -1,0 +1,19 @@
+<!doctype html> <!-- tells the browser this file uses modern HTML -->
+<html lang="en"> <!-- page language is English -->
+<head>
+    <meta charset="utf-8"> <!-- lets names and punctuation display correctly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- fits phones and computers -->
+    <title>{% block title %}ASLY'S PORTFOLIO{% endblock %}</title> <!-- child pages replace this title block -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- loads Tailwind utility styles -->
+</head>
+<body class="flex min-h-screen flex-col bg-amber-50"> <!-- keeps the footer at the bottom on short pages -->
+
+    {% include "partials/header.html" %} {# reuses the shared header #}
+    <main class="flex-grow"> <!-- fills extra screen space above the footer -->
+        {% block content %} {# each page inserts its own content here #}
+
+        {% endblock %}
+    </main>
+    {% include "partials/footer.html" %} {# reuses the shared footer #}
+</body>
+</html>
