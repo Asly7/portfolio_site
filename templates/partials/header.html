@@ -1,11 +1,14 @@
 
-<header class="bg-green-900 text-white shadow-md">
-    <nav class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 p-3">
-        <a class="text-xl font-bold text-green-300" href="{% url 'home' %}">ASLY'S PORTFOLIO</a>
-        <div class="flex gap-5">
-            <a class="text-green-300 transition duration-300 hover:text-black" href="{% url 'home' %}">Home</a>
-            <a class="text-green-300 transition duration-300 hover:text-black" href="{% url 'about' %}">About</a>
-            <a class="text-green-300 transition duration-300 hover:text-black" href="{% url 'contact' %}">Contact</a>
+<!-- The shared header appears on every page that extends base.html-->
+<header class="bg-black text-white shadow-md">
+    <nav class="mx-auto flex w-full max-w-none flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
+
+        <a class="text-xl font-bold text-white px-20" href="{% url 'home' %}">ASLY'S PORTFOLIO</a>
+
+        <div class="flex gap-6 px-20">
+            <a class="text-white transition duration-300 hover:underline " href="{% url 'home' %}">Home</a>
+            <a class="text-white transition duration-300 hover:underline" href="{% url 'about' %}">About</a>
+            <a class="text-white transition duration-300 hover:underline" href="{% url 'contact' %}">Contact</a>
         </div>
     </nav>
 </header>
